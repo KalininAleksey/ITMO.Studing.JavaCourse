@@ -4,7 +4,7 @@ import java.time.LocalDate;
 public class House {
     private int floorsNumber;
     private int buildYear;
-    String name;
+    private String name;
 
     public int yearFromBuilding ()
     {

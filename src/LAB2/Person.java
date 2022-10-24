@@ -5,8 +5,11 @@ public class Person {
     private String lastName;
     private byte age;
     private Country country;
-    public  Person()
-    {};
+
+    public Person() {
+    }
+
+
     public Person(String FName, String LName) {
         this.firstName = FName;
         this.lastName = LName;

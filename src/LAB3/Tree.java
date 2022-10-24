@@ -5,7 +5,7 @@ import javax.swing.plaf.synth.SynthStyleFactory;
 public class Tree {
     private int age;
     private boolean isAlive;
-    String name;
+    private String name;
     public Tree(int age,String name)
     {
         this.age=age;

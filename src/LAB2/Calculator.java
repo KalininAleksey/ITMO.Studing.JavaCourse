@@ -39,14 +39,14 @@ public class Calculator {
     }
     public static double div(int a, int b)
     {
-        return a/b;
+        return (double)a/b;
     }
     public static double div (double a,double b)
     {
-        return a/b;
+        return  a/b;
     }
     public static double div(long a,long b)
     {
-        return a/b;
+        return (double)a/b;
     }
 }

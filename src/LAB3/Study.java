@@ -8,7 +8,10 @@ class Study {
     //TODO
 
     public String printCourse() {
-        return this.course;
+
+        String course1 = this.course;
+        System.out.println(course1);
+        return course1;
     }
     public Study (String Course)
     {
@@ -22,6 +25,6 @@ class JavaProgram {
     public static void main(String[] args) {
         //TODO
         Study study=new Study("Изучение Java - это просто");
-        System.out.println(study.printCourse());
+        study.printCourse();
     }
 }
