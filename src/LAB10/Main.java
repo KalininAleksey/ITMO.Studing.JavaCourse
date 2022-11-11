@@ -34,41 +34,38 @@ public class Main {
         List<String> stringList = new ArrayList<>();
         stringList.addAll(textFileRead(file1Path));
         stringList.addAll(textFileRead(file2Path));
-        stringListToFile(stringList,file3Path);
+        stringListToFile(stringList, file3Path);
     }
 
     public static void stringListToFile(List<String> stringList, String filePath) {
-        boolean isAppend=false;
-        for (int i = 0; i < stringList.size(); i++
-        ) {
-            if (i!=0) {
-                isAppend=true;
+        boolean isAppend = false;
+        for (int i = 0; i < stringList.size(); i++) {
+            if (i != 0) {
+                isAppend = true;
             }
             textFileWrite(stringList.toArray()[i].toString(), filePath, isAppend);
         }
     }
 
-    public static void textFileSymbolReplaceBy$(String filePath) {
+    public static void textFileSymbolReplaceBy$(String filePath,String replaceWith) {
         List<String> stringList = new ArrayList<>(textFileRead(filePath));
         String newString;
-        for (String string : stringList
-        ) {
-            newString = string.replaceAll("[^A-Za-zА-Яа-я0-9]", "\\$");
+        for (String string : stringList) {
+            newString = string.replaceAll("[^A-Za-zА-Яа-я0-9]", replaceWith);
             Collections.replaceAll(stringList, string, newString);
         }
-        stringListToFile(stringList,filePath);
+        stringListToFile(stringList, filePath);
 
 
     }
 
     public static void main(String[] args) {
         List<String> stringList = textFileRead("files/test.txt");
-        for (String string : stringList
-        ) {
+        for (String string : stringList) {
             System.out.println(string);
         }
         textFileWrite(stringList.toArray()[stringList.size() - 1].toString(), "files/test2.txt", true);
         textFilesMerge("files/test.txt", "files/test2.txt", "files/test3.txt");
-        textFileSymbolReplaceBy$("files/test.txt");
+        textFileSymbolReplaceBy$("files/test.txt","\\$");
     }
 }
